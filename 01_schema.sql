@@ -1,5 +1,7 @@
 -- Coffee Shop Sales Analysis
--- Table schema
+-- Table: coffee_shop_sales
+-- Description: Staging table used for initial CSV data import.
+-- Data from this table is later normalized into products, stores and sales tables.
 
 CREATE TABLE coffee_shop_sales (
     transaction_id     NUMBER PRIMARY KEY,
@@ -15,7 +17,8 @@ CREATE TABLE coffee_shop_sales (
     product_detail     VARCHAR2(100)
 );
 
--- Table Products
+-- Table: Products
+-- Unique product informations.
 
 CREATE TABLE products (
     product_id         NUMBER PRIMARY KEY,
@@ -25,14 +28,16 @@ CREATE TABLE products (
     unit_price         NUMBER(5, 2)
 );
 
--- Table Stores
+-- Table: Stores
+-- Unique stores location informations.
 
 CREATE TABLE stores (
     store_id         NUMBER PRIMARY KEY,
     store_location   VARCHAR2(50)
 );
 
--- Table Sales
+-- Table: Sales
+-- Contains detailed sales records.
 
 CREATE TABLE sales (
     transaction_id     NUMBER PRIMARY KEY,
