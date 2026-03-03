@@ -24,8 +24,7 @@ CREATE TABLE products (
     product_id         NUMBER PRIMARY KEY,
     product_category   VARCHAR2(50),
     product_type       VARCHAR2(50),
-    product_detail     VARCHAR2(100),
-    unit_price         NUMBER(5, 2)
+    product_detail     VARCHAR2(100)
 );
 
 -- Table: Stores
@@ -46,6 +45,7 @@ CREATE TABLE sales (
     transaction_qty    NUMBER,
     store_id           NUMBER,
     product_id         NUMBER,
+    unit_price         NUMBER(5, 2),
     CONSTRAINT fk_sales_stores FOREIGN KEY ( store_id )
         REFERENCES stores ( store_id ),
     CONSTRAINT fk_sales_product FOREIGN KEY ( product_id )
