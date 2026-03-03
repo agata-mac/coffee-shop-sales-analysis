@@ -14,3 +14,14 @@ CREATE TABLE coffee_shop_sales (
     product_type       VARCHAR2(50),
     product_detail     VARCHAR2(100)
 );
+
+CREATE TABLE products (
+    product_id         NUMBER PRIMARY KEY,
+    product_category   VARCHAR2(50),
+    product_type       VARCHAR2(50),
+    product_detail     VARCHAR2(100),
+    unit_price         NUMBER(5, 2)
+);
+
+
+
