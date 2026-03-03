@@ -15,6 +15,8 @@ CREATE TABLE coffee_shop_sales (
     product_detail     VARCHAR2(100)
 );
 
+-- Table Products
+
 CREATE TABLE products (
     product_id         NUMBER PRIMARY KEY,
     product_category   VARCHAR2(50),
@@ -23,5 +25,9 @@ CREATE TABLE products (
     unit_price         NUMBER(5, 2)
 );
 
+-- Table Stores
 
-
+CREATE TABLE stores (
+    store_id         NUMBER PRIMARY KEY,
+    store_location   VARCHAR2(50)
+)
