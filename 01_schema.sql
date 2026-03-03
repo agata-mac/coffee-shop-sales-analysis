@@ -30,4 +30,19 @@ CREATE TABLE products (
 CREATE TABLE stores (
     store_id         NUMBER PRIMARY KEY,
     store_location   VARCHAR2(50)
-)
+);
+
+-- Table Sales
+
+CREATE TABLE sales (
+    transaction_id     NUMBER PRIMARY KEY,
+    transaction_date   DATE,
+    transaction_time   VARCHAR2(8),
+    transaction_qty    NUMBER,
+    store_id           NUMBER,
+    product_id         NUMBER,
+    CONSTRAINT fk_sales_stores FOREIGN KEY ( store_id )
+        REFERENCES stores ( store_id ),
+    CONSTRAINT fk_sales_product FOREIGN KEY ( product_id )
+        REFERENCES products ( product_id )
+);
