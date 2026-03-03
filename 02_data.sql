@@ -25,4 +25,25 @@ INSERT INTO stores (
         store_location
     FROM
         coffee_shop_sales;
-  
+        
+-- Insert data into sales table.
+
+INSERT INTO sales (
+    transaction_id,
+    transaction_date,
+    transaction_time,
+    transaction_qty,
+    store_id,
+    product_id,
+    unit_price
+)
+    SELECT DISTINCT
+        transaction_id,
+        TO_DATE(transaction_date, 'DD.MM.YYYY'),
+        transaction_time,
+        transaction_qty,
+        store_id,
+        product_id,
+        unit_price
+    FROM
+        coffee_shop_sales;
