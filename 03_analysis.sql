@@ -17,3 +17,12 @@ FROM
     sales
 GROUP BY
     TO_CHAR(transaction_date, 'YYYY-MM');
+    
+-- Calculate yearly revenue.
+SELECT
+    TO_CHAR(transaction_date, 'YYYY') AS year,
+    SUM(transaction_qty * unit_price) AS revenue
+FROM
+    sales
+GROUP BY
+    TO_CHAR(transaction_date, 'YYYY');
